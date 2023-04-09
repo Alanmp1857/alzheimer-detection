@@ -26,7 +26,7 @@ def resize_image(image, size=(128, 128)):
     img_arr = np.array(img).reshape(1, size[0], size[1], 3)
     return img_arr
 
-@app.post("/predict")
+@app.post("/alzheimer/predict")
 async def predict(
     file: UploadFile = File(...)
 ):
