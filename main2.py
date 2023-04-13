@@ -7,6 +7,8 @@ import tensorflow as tf
 
 app = FastAPI()
 
+# uvicorn main2:app --host 0.0.0.0 --port 8001 
+
 MODEL = tf.keras.models.load_model("a_model.h5")
 
 CLASS_NAMES = ['Mild_Demented', 'Moderate_Demented', 'Non_Demented', 'Very_Mild_Demented']
@@ -44,4 +46,4 @@ async def predict(
     }
 
 if __name__ == "__main__":
-    uvicorn.run(app, host='localhost', port=8000)
+    uvicorn.run(app, host='0.0.0.0', port=8001)
